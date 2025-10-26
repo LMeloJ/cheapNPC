@@ -1,3 +1,0 @@
-"""
-Web interfaces for cheapNPC.
-"""

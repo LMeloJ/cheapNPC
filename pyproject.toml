@@ -1,7 +1,7 @@
 [project]
 name = "cheapNPC"
 version = "0.1.0"
-description = "Add your description here"
+description = "An AI-powered NPC trading system for fantasy village economies"
 readme = "README.md"
 requires-python = ">=3.12"
 dependencies = [

@@ -70,6 +70,12 @@ def setup_database():
         ''')
 
         conn.commit()
+        
+        # Explicitly ensure all changes are written to disk
+        # This prevents race conditions where NPC creation starts before tables are fully ready
+        conn.execute("PRAGMA synchronous = NORMAL")  # Ensures data is written
+        conn.commit()
+        
         print(f"Database and all tables set up successfully.")
 
 

@@ -2,8 +2,7 @@
 """
 Launcher script for the CheapNPC Agent Dashboard.
 
-This script provides an easy way to start the enhanced web interface
-with all agent functionality integrated.
+This script starts the web interface with agent functionality.
 """
 
 import os
@@ -15,25 +14,31 @@ project_root = Path(__file__).parent.parent.parent
 sys.path.insert(0, str(project_root))
 
 def main():
-    """Launch the Enhanced NPC Agent Dashboard."""
+    """Launch the CheapNPC Agent Dashboard."""
     print("🚀 Starting CheapNPC Agent Dashboard...")
-    print("=" * 50)
+    print("=" * 60)
     
-    # Check if we're in the right directory
-    if not os.path.exists("data/village.db"):
-        print("⚠️  Warning: Database 'data/village.db' not found!")
-        print("   The dashboard will still start, but some features may not work.")
-        print("   Consider running NPC generation scripts first.")
+    # Check database status
+    try:
+        from cheapNPC.config import get_config
+        config = get_config()
+        db_path = config.database.path
+        if not os.path.exists(db_path):
+            print(f"⚠️  Warning: Database '{db_path}' not found!")
+            print("   The dashboard will still start, but some features may not work.")
+            print("   Click 'Create World' on the landing page to initialize.")
+            print()
+    except Exception as e:
+        print(f"⚠️  Warning: Could not load configuration: {e}")
         print()
     
-    # Import and run the dashboard
+    # Start the dashboard
     try:
-        from cheapNPC.presentation.web.app import main as dashboard_main
+        from cheapNPC.app import main as dashboard_main
         dashboard_main()
     except ImportError as e:
         print(f"❌ Import Error: {e}")
         print("   Make sure you're running this from the project root directory.")
-        print("   Try: python -m cheapNPC.presentation.web.app")
         sys.exit(1)
     except Exception as e:
         print(f"❌ Error starting dashboard: {e}")

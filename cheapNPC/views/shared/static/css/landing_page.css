@@ -1,0 +1,43 @@
+/* Landing Page Specific Styles */
+
+.landing-container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.status-box {
+    background-color: #f8f9fa;
+    border: 2px solid #dee2e6;
+    border-radius: 10px;
+    padding: 20px;
+    margin: 20px 0;
+    text-align: center;
+}
+
+.setup-button {
+    background: linear-gradient(45deg, #007bff, #0056b3);
+    color: white;
+    border: none;
+    padding: 15px 30px;
+    font-size: 18px;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.setup-button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0,123,255,0.3);
+}
+
+.output-box {
+    background-color: #f8f9fa !important;
+    border: 1px solid #dee2e6 !important;
+    border-radius: 5px !important;
+    padding: 15px !important;
+    font-family: 'Courier New', monospace !important;
+    white-space: pre-wrap !important;
+    max-height: 400px !important;
+    overflow-y: auto !important;
+}

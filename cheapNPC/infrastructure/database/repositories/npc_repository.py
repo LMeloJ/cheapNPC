@@ -6,7 +6,7 @@ operations using SQLite database.
 """
 
 from typing import List, Optional, Union
-from cheapNPC.core.models import NPC, CrafterNPC, SalesPersonNPC, InventoryEntry, ItemQuality, ProfessionSkill
+from cheapNPC.models import NPC, CrafterNPC, SalesPersonNPC, InventoryEntry, ItemQuality, ProfessionSkill
 from .interfaces import NPCRepository
 from ..connection import get_database_connection
 
@@ -231,7 +231,7 @@ class SQLiteNPCRepository(NPCRepository):
             profession_val = first_row['profession']
             
             # Determine NPC type based on profession
-            from cheapNPC.core.models import CraftAndGatherProfessions, SalesPersonProfession
+            from cheapNPC.models import CraftAndGatherProfessions, SalesPersonProfession
             
             try:
                 # Try to create as CrafterNPC first
@@ -324,7 +324,7 @@ class SQLiteNPCRepository(NPCRepository):
 
             # Convert to NPC objects
             npcs = []
-            from cheapNPC.core.models import CraftAndGatherProfessions, SalesPersonProfession
+            from cheapNPC.models import CraftAndGatherProfessions, SalesPersonProfession
             
             for npc_name, data in npcs_data.items():
                 info = data['info']

@@ -6,7 +6,7 @@ operations using SQLite database.
 """
 
 from typing import List, Dict, Any, Union, Tuple
-from cheapNPC.core.models import CrafterNPC, SalesPersonNPC, InventoryEntry, ItemQuality
+from cheapNPC.models import CrafterNPC, SalesPersonNPC, InventoryEntry, ItemQuality
 from .interfaces import InventoryRepository
 from ..connection import get_database_connection
 

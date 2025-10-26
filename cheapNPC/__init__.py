@@ -1,3 +1,8 @@
-__all__ = ["__version__"]
+"""cheapNPC package."""
 
-from ._version import __version__
+from .models import *
+from .services import *
+from .agents import *
+from .views import *
+
+__version__ = "0.1.0"

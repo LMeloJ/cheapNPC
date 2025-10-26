@@ -14,9 +14,21 @@ from contextlib import contextmanager
 class DatabaseConfig:
     """Database configuration settings."""
     
-    def __init__(self, db_path: str = "data/village.db"):
-        self.db_path = db_path
+    def __init__(self, db_path: str = None):
+        # Use configuration if no path provided
+        if db_path is None:
+            from cheapNPC.config import get_config
+            config = get_config()
+            self.db_path = config.database.path
+        else:
+            self.db_path = db_path
         self._ensure_data_directory()
+    
+    def get_current_db_path(self) -> str:
+        """Get the current database path from configuration."""
+        from cheapNPC.config import get_config
+        config = get_config()
+        return config.database.path
     
     def _ensure_data_directory(self):
         """Ensure the data directory exists."""
@@ -66,9 +78,23 @@ class DatabaseConnection:
 _db_connection: Optional[DatabaseConnection] = None
 
 
-def get_database_connection() -> DatabaseConnection:
-    """Get the global database connection instance."""
+def get_database_connection(db_path_override: str = None) -> DatabaseConnection:
+    """
+    Get the global database connection instance.
+    
+    Args:
+        db_path_override: Optional path to override the configured database path
+        
+    Returns:
+        DatabaseConnection instance
+    """
     global _db_connection
+    
+    # If override is provided, create a new connection with that path
+    if db_path_override:
+        return DatabaseConnection(DatabaseConfig(db_path_override))
+    
+    # Otherwise, use the singleton instance
     if _db_connection is None:
         _db_connection = DatabaseConnection()
     return _db_connection

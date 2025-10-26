@@ -4,7 +4,7 @@ Script to create the NPC world.
 This script uses the WorldService to create the complete NPC world.
 """
 
-from cheapNPC.core.services.world_service import create_world_sync
+from cheapNPC.services.world_service import create_world_sync
 
 
 def main():

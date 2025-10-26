@@ -7,7 +7,7 @@ following the Repository pattern for clean separation of concerns.
 
 from abc import ABC, abstractmethod
 from typing import List, Optional, Union, Dict, Any
-from cheapNPC.core.models import (
+from cheapNPC.models import (
     NPC, CrafterNPC, SalesPersonNPC, InventoryEntry, 
     TransactionEntry, ItemBase, ItemQuality
 )

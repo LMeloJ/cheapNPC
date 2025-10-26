@@ -1,0 +1,82 @@
+/* Dashboard Specific Styles */
+
+.landing-container { 
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.dashboard-container {
+    width: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+.agent-section { 
+    border: 2px solid #e1e5e9; 
+    border-radius: 10px; 
+    padding: 20px; 
+    margin: 10px 0;
+    background: linear-gradient(135deg, #f8f9fa 0%, #ffffff 100%);
+}
+
+.status-running { 
+    background-color: #e3f2fd !important;
+    border: 3px solid #2196f3 !important;
+    border-radius: 15px !important;
+    padding: 25px !important;
+    margin: 20px 0 !important;
+    text-align: center !important;
+    color: #1565c0 !important;
+    font-weight: bold !important;
+    font-size: 18px !important;
+    box-shadow: 0 4px 8px rgba(33, 150, 243, 0.3) !important;
+}
+
+.status-success { 
+    color: #28a745; 
+    font-weight: bold; 
+}
+
+.status-error { 
+    color: #dc3545; 
+    font-weight: bold; 
+}
+
+.output-box {
+    background-color: #f8f9fa !important;
+    border: 1px solid #dee2e6 !important;
+    border-radius: 5px !important;
+    padding: 15px !important;
+    font-family: 'Courier New', monospace !important;
+    white-space: pre-wrap !important;
+    max-height: 400px !important;
+    overflow-y: auto !important;
+    scrollbar-width: thin !important;
+    scrollbar-color: #6c757d #f8f9fa !important;
+    resize: vertical !important;
+}
+
+.output-box textarea {
+    max-height: 400px !important;
+    overflow-y: auto !important;
+    resize: vertical !important;
+}
+
+.output-box::-webkit-scrollbar {
+    width: 8px !important;
+}
+
+.output-box::-webkit-scrollbar-track {
+    background: #f8f9fa !important;
+    border-radius: 4px !important;
+}
+
+.output-box::-webkit-scrollbar-thumb {
+    background: #6c757d !important;
+    border-radius: 4px !important;
+}
+
+.output-box::-webkit-scrollbar-thumb:hover {
+    background: #495057 !important;
+}

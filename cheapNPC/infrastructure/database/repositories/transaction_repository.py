@@ -6,7 +6,7 @@ operations using SQLite database.
 """
 
 from typing import List, Optional, Dict, Any
-from cheapNPC.core.models import TransactionEntry, ItemQuality
+from cheapNPC.models import TransactionEntry, ItemQuality
 from .interfaces import TransactionRepository
 from ..connection import get_database_connection
 
